@@ -47,7 +47,7 @@ jobs:
     - name: Run OPA policy checks
       uses: instrumenta/conftest-action@master
       with:
-        files: tfplan.json
+        files: ${{ inputs.working_directory }}/tfplan.json
         policy: opa-policies/
         namespace: main
         combine: false
