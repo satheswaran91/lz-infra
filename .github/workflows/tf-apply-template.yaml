@@ -56,13 +56,13 @@ jobs:
       working-directory: ${{ inputs.working_directory }}
 
     - name: Run OPA policy checks
-        uses: instrumenta/conftest-action@master
-        with:
-          files: tfplan.json
-          policy: opa-policies/
-          namespace: main
-          combine: false
-          output: stdout
+      uses: instrumenta/conftest-action@master
+      with:
+        files: tfplan.json
+        policy: opa-policies/
+        namespace: main
+        combine: false
+        output: stdout
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main'
